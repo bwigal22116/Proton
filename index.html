@@ -1,0 +1,37 @@
+<title>Proton | Menu</title>
+<h1>Welcome to Proton ™️</h1>
+
+ <!-- Change Text Code -->
+<p style= "color: white;" id="changing-text"></p>
+
+<style>
+  #changing-text {
+  font-size: 20px;
+}
+
+</style>
+
+<script>
+    // Create an array of custom responses
+    const responses = ["Skip Homework, Play Games!", "The furture of gaming.™️", "Made by Blake", "Im at your door.", "How are you still here?!", "Just press play PLEASE JUST PLEASE", "Why arent you pressing play!", "My last warning press play."];
+
+    // Set a counter to keep track of which response to display
+    let counter = 0;
+
+    // Create a function to change the text
+    function changeText() {
+      // Get the element that contains the text
+      const element = document.getElementById("changing-text");
+
+      // Update the element's innerHTML with the next response
+      element.innerHTML = responses[counter];
+
+      // Increment the counter
+      counter = (counter + 1) % responses.length;
+    }
+
+    // Set an interval to call the changeText() function every 20 seconds
+    setInterval(changeText, 5000);
+  </script>
+</head>
+<body onload="changeText()">

@@ -1,0 +1,83 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L3R3HYEKKN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L3R3HYEKKN');
+</script>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <style type="text/css"> 
+            body 
+            {
+                margin: 0;
+                background-color: #111;
+                font-family: helvetica, arial, sans-serif;
+            }
+            canvas {
+                display: block;
+            }
+            /* remove outline on canvas */
+            canvas:focus {
+                outline: none;
+            }
+            
+            #application-splash {
+                position: absolute;
+                top: 40%;
+                width: 30%;
+                left: 35%;
+            }
+
+            #application-splash img {
+                width: 100%;
+            }
+
+            /* Small devices */
+            @media (min-width: 768px) {
+                #application-splash {
+                    width: 20%;
+                    left: 40%;
+                }
+            }
+
+            /* Large devices */
+            @media (min-width: 992px) {
+                #application-splash {
+                    width: 10%;
+                    left: 45%;
+                }
+            }
+        }
+        </style>
+        <title>Swoop</title>
+        <script src="playcanvas-0.144.3.min.js"></script>
+        <script src="options.js"></script>
+        <script src="data.js"></script>
+    </head>
+    <body>
+        <div id="application-splash">
+            <a href="http://playcanvas.com" target="_blank"><img src="PLAY_FLAT_ORANGE3.png"/></a>
+            <div id='application-progress' />
+        </div>
+
+        <!--[if IE]>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+            <script>
+                window.attachEvent("onload", function() {
+                    CFInstall.check({
+                        mode: "inline"
+                    });
+                });
+            </script>
+        <![endif]-->
+        <script src="bootstrap.js"></script>
+    </body>
+</html>

@@ -9,31 +9,45 @@
 </script>
 
 <!-- search bar -->
-<div class="topnav">
-  <a href="#">Games</a>
-  <a href="internet">InterStellar</a>
-</div>
-
 <style>
-  .topnav {
-  background-color: #ab4af0;
-  color: #e33bdd;
-  text-align: center;
-  padding: 10px 0;
-}
+    #topbar {
+      background-color: #ADD8E6;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
 
-.topnav a {
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
-}
+    #topbar a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      margin-right: 10px;
+    }
 
-.topnav a:hover {
-  background-color: #333;
-}
-  
+    #topbar a:hover {
+      background-color: #F8F9FA;
+    }
+
+    #topbar .games {
+      display: flex;
+      align-items: center;
+    }
+
+    #topbar .games img {
+      padding-right: 5px;
+    }
   </style>
-
+</head>
+<body>
+  <div id="topbar">
+    <div class="games">
+      <a href="#">Games 🎮</a>
+    </div>
+    <a href="internet" target="_blank">InerNet 🌐</a>
+  </div>
+  
 <title>Proton | Fun</title>
 
 <!-- Games add code -->

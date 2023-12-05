@@ -16,6 +16,14 @@
   color: #b50ced;
 }
 
+ #topbar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s ease-in-out;
+  z-index: 10;
+}
+
     
     #topbar {
       background-color: #2f9eed;
@@ -90,7 +98,17 @@
   body {
     background-color: #ADD8E6;
 </style>
+<script>
+  function toggleNavbar() {
+  var nav = document.getElementById('topbar');
+  if (nav.style.left === '-100%') {
+    nav.style.left = '0';
+  } else {
+    nav.style.left = '-100%';
+  }
+}
 
+</script>
 <!-- Games add code -->
 
 <a href="Monkey-Mart/monkey-mart/index.html">

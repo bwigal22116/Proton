@@ -19,6 +19,12 @@
             margin: 0;
             overflow: hidden;
         }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 <body>
@@ -29,6 +35,7 @@
         function setup() {
             createCanvas(windowWidth, windowHeight);
             frameRate(30);
+            noStroke();
         }
 
         function draw() {
@@ -36,8 +43,8 @@
 
             if (frameCount % snowflakeDelay === 0) {
                 for (let i = 0; i < 10; i++) { // Create 10 snowflakes on each iteration
-                    let x = random(width); // Use width instead of windowWidth
-                    let y = random(height); // Use height instead of windowHeight
+                    let x = random(width);
+                    let y = random(-100, -10); // Set the initial y position above the canvas
                     let snowflake = {
                         x: x,
                         y: y,
@@ -52,7 +59,7 @@
                 let snowflake = snowflakes[i];
                 snowflake.y += snowflake.speed; // Move the snowflake vertically
 
-                if (snowflake.y > height + snowflake.size) { // Use height instead of windowHeight
+                if (snowflake.y > height + snowflake.size) {
                     snowflakes.splice(i, 1); // Remove snowflake if it goes below the screen
                     i--;
                 } else {
@@ -64,7 +71,6 @@
         function drawSnowflake(x, y, size) {
             let angle = TWO_PI / 6;
             fill(255);
-            noStroke();
             beginShape();
             for (let a = 0; a < TWO_PI; a += angle) {
                 let sx = x + cos(a) * size;

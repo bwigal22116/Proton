@@ -8,7 +8,7 @@
  gtag('config', 'G-Y2W8NWFB5P');
 </script>
 <!-- SnowFlakes Code -->
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Snowflakes</title>
@@ -16,6 +16,7 @@
     <style>
         body {
             margin: 0;
+            overflow: hidden;
         }
     </style>
 </head>
@@ -34,8 +35,8 @@
 
             if (frameCount % snowflakeDelay === 0) {
                 for (let i = 0; i < 10; i++) { // Create 10 snowflakes on each iteration
-                    let x = random(windowWidth);
-                    let y = -10; // Set the initial y position above the canvas
+                    let x = random(width); // Use width instead of windowWidth
+                    let y = random(height); // Use height instead of windowHeight
                     let snowflake = {
                         x: x,
                         y: y,
@@ -50,7 +51,7 @@
                 let snowflake = snowflakes[i];
                 snowflake.y += snowflake.speed; // Move the snowflake vertically
 
-                if (snowflake.y > windowHeight + snowflake.size) {
+                if (snowflake.y > height + snowflake.size) { // Use height instead of windowHeight
                     snowflakes.splice(i, 1); // Remove snowflake if it goes below the screen
                     i--;
                 } else {
@@ -81,7 +82,6 @@
     </script>
 </body>
 </html>
-
 
 <!DOCTYPE html>
 <html>

@@ -12,18 +12,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <title>Snowflakes</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <style>
         body {
             margin: 0;
             overflow: hidden;
+            position: relative;
         }
 
         canvas {
             position: absolute;
             top: 0;
             left: 0;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -89,7 +91,6 @@
     </script>
 </body>
 </html>
-
 <style>
     #topbar {
       background-color: #ADD8E6;

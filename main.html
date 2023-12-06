@@ -7,6 +7,84 @@
 
  gtag('config', 'G-Y2W8NWFB5P');
 </script>
+<!-- SnowFlakes Code -->
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            background-color: #cce5ff; /* Blue background color */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+      let snowflakes = [];
+      let snowflakeCount = 0;
+      let snowflakeDelay = 30; // 30 frames delay, assuming frameRate(30)
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        frameRate(30);
+      }
+
+      function draw() {
+        background(204, 229, 255); // Set the background color
+
+        if (frameCount % snowflakeDelay === 0) {
+          for (let i = 0; i < 10; i++) { // Create 10 snowflakes on each iteration
+            let x = random(windowWidth);
+            let y = -10; // Set the initial y position above the canvas
+            let snowflake = {
+              x: x,
+              y: y,
+              size: random(5, 15),
+              speed: random(1, 5)
+            };
+            snowflakes.push(snowflake);
+          }
+        }
+
+        for (let i = 0; i < snowflakes.length; i++) {
+          let snowflake = snowflakes[i];
+          snowflake.y += snowflake.speed; // Move the snowflake vertically
+
+          if (snowflake.y > windowHeight + snowflake.size) {
+            snowflakes.splice(i, 1); // Remove snowflake if it goes below the screen
+            i--;
+          } else {
+            drawSnowflake(snowflake.x, snowflake.y, snowflake.size);
+          }
+        }
+      }
+
+      function drawSnowflake(x, y, size) {
+        let angle = TWO_PI / 6;
+        fill(255);
+        noStroke();
+        beginShape();
+        for (let a = 0; a < TWO_PI; a += angle) {
+          let sx = x + cos(a) * size;
+          let sy = y + sin(a) * size;
+          vertex(sx, sy);
+        }
+        endShape(CLOSE);
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      setup();
+      draw();
+    </script>
+</body>
+</html>
+
 
 <!DOCTYPE html>
 <html>

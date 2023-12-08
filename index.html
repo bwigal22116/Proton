@@ -1,0 +1,299 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2W8NWFB5P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y2W8NWFB5P');
+</script>
+
+<!-- SnowFlakes Code -->
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let snowflakes = [];
+        let snowflakeDelay = 30; // 30 frames delay, assuming frameRate(30)
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            frameRate(30);
+            noStroke();
+        }
+
+        function draw() {
+            clear(); // Clear the canvas on each frame
+
+            if (frameCount % snowflakeDelay === 0) {
+                for (let i = 0; i < 10; i++) { // Create 10 snowflakes on each iteration
+                    let x = random(width);
+                    let y = random(-100, -10); // Set the initial y position above the canvas
+                    let snowflake = {
+                        x: x,
+                        y: y,
+                        size: random(5, 15),
+                        speed: random(1, 5)
+                    };
+                    snowflakes.push(snowflake);
+                }
+            }
+
+            for (let i = 0; i < snowflakes.length; i++) {
+                let snowflake = snowflakes[i];
+                snowflake.y += snowflake.speed; // Move the snowflake vertically
+
+                if (snowflake.y > height + snowflake.size) {
+                    snowflakes.splice(i, 1); // Remove snowflake if it goes below the screen
+                    i--;
+                } else {
+                    drawSnowflake(snowflake.x, snowflake.y, snowflake.size);
+                }
+            }
+        }
+
+        function drawSnowflake(x, y, size) {
+            let angle = TWO_PI / 6;
+            fill(255);
+            beginShape();
+            for (let a = 0; a < TWO_PI; a += angle) {
+                let sx = x + cos(a) * size;
+                let sy = y + sin(a) * size;
+                vertex(sx, sy);
+            }
+            endShape(CLOSE);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        setup();
+        draw();
+    </script>
+</body>
+</html>
+<style>
+    #topbar {
+      background-color: #ADD8E6;
+      padding: 5px 10px;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 25px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #topbar a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 5px;
+      margin: 0 5px;
+      border-radius: 5px;
+    }
+
+    #topbar a:hover {
+      background-color: #F8F9FA;
+    }
+
+    #topbar .games {
+      display: flex;
+      align-items: center;
+    }
+
+    #topbar .games img {
+      padding-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="topbar">
+    <div class="games">
+      <a href="https://bearcat-gaming.github.io/Proton/">Home 🏡</a><a href="https://bearcat-gaming.github.io/Proton/News/">News 🗞️</a><a href="https://bearcat-gaming.github.io/Proton/main">Games 🎮</a><a href="https://bearcat-gaming.github.io/Proton/internet/">Interstellar 🌐</a>
+    </div>
+  </div>
+
+<br>
+
+  
+  <img src="gifs/Winter.gif" class="my-gif" />
+
+<title>Home | Proton</title>
+<!DOCTYPE html>
+<h1 style= "color: white;">Welcome to Proton ™️</h1>
+<h2 style= "color: gray;">𝕋𝕙𝕖 𝕟𝕖𝕩𝕥 𝕘𝕖𝕟 𝕠𝕗 𝕘𝕒𝕞𝕚𝕟𝕘.</h2>
+<p style= "color: white;" id="changing-text"></p>
+<br>
+
+<div style="text-align: center;">
+<a href="https://bearcat-gaming.github.io/Proton/main" target="_self">
+  <button>Games</button>
+<br>
+<br>
+  <br>
+  <a href="https://bearcat-gaming.github.io/Proton/News" target="_self">
+  <button>News</button>
+
+
+    <style>
+
+      img {
+  border: 3px solid gray;
+}
+
+      .my-gif {
+  margin: 0 auto;
+}
+
+      
+      body {
+  background-image: linear-gradient(to right, #ccd1ff, #6978ba, #aebafb, #515b8f, #8a9be1, #343958);
+}
+
+    
+      /* Center the image */
+
+      /* Center the GIF */
+.my-gif {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Center the buttons */
+button {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+      
+
+/* Center the title */
+h1 {
+  text-align: center;
+}
+
+/* Center the heading */
+h2 {
+  text-align: center;
+}
+
+/* Center the buttons */
+button {
+  margin: 0 auto;
+}
+
+/* Center the changing text */
+#changing-text {
+  text-align: center;
+}
+
+
+    
+
+      </style>
+    <style>
+      button {
+  margin: 0 auto;
+}
+
+     button {
+  width: 150px;
+  height: 50px;
+  background-color: #B760E1;
+  border-radius: 10px;
+}
+
+
+      body {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -50px;
+  left: random(0, 100vw);
+  opacity: random(0.5, 1);
+  animation: fall random(3, 7)s linear infinite;
+  transform: rotate(random(0, 360deg));
+  width: random(5px, 10px);
+  height: random(5px, 10px);
+  background-color: #fff;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+    </style>
+  
+</a>
+
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+  #changing-text {
+  font-size: 20px;
+}
+
+</style>
+  
+  <script>
+    // Create an array of custom responses
+    const responses = ["Merry Christmas!", "Adarsh said to check News!", "Hello!", "Website Made by Blake", "Have a Great Day! :D", "Im at your door, Look outside!","._.", "This is the end."];
+
+    // Set a counter to keep track of which response to display
+    let counter = 0;
+
+    // Create a function to change the text
+    function changeText() {
+      // Get the element that contains the text
+      const element = document.getElementById("changing-text");
+
+      // Update the element's innerHTML with the next response
+      element.innerHTML = responses[counter];
+
+      // Increment the counter
+      counter = (counter + 1) % responses.length;
+    }
+
+    // Set an interval to call the changeText() function every 20 seconds
+    setInterval(changeText, 5000);
+  </script>
+</head>
+<body onload="changeText()">
+<div class="snowflakes">
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    <div class="snowflake"></div>
+    </div>
+</body>
+</html>

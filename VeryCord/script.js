@@ -74,6 +74,25 @@ function getRandomColor() {
 }
 
 //------------- DOM STUFF
+function addMessageToListDOM(text, member) {
+  const el = DOM.messages;
+  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+  
+  // Create the message element
+  const messageElement = createMessageElement(text, member);
+  
+  // Play the sound before adding the message to the DOM
+  const audio = new Audio('ping.mp3'); // Replace "ping.mp3" with your actual file path
+  audio.play();
+  
+  // Add the message element to the DOM
+  el.appendChild(messageElement);
+  
+  if (wasTop) {
+    el.scrollTop = el.scrollHeight - el.clientHeight;
+  }
+}
+
 
 const DOM = {
   membersCount: document.querySelector('.members-count'),

@@ -15,7 +15,7 @@ if (localStorage.getItem("imgData") === null) {
 }
 
 var currentCase = "case1";
-var acceptMoneyPerClick = 999.9999999999;
+var acceptMoneyPerClick = 999.099999999999;
 
 /*=========================Inventory============================*/
 //In inventory: weap skins
@@ -44,8 +44,8 @@ var keyDiscount = 0;
 
 var operationCases = {
 	case1: {
-		name: "Weapon Case 1",
-		price: 6.90,
+		name: "Rich only 😎💶",
+		price: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999,
 		img: "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT"
 	},
 	case2: {
